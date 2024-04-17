@@ -12,11 +12,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			], count : 12,
-			meesage: 'hola navbar desde flux'
+			], 
+			count : 12,
+			message: 'hola navbar desde flux'
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
@@ -26,18 +26,46 @@ const getState = ({ getStore, getActions, setStore }) => {
 				*/
 			},
 			changeColor: (index, color) => {
-				//get the store
 				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
 				const demo = store.demo.map((elm, i) => {
 					if (i === index) elm.background = color;
 					return elm;
 				});
-
-				//reset the global store
 				setStore({ demo: demo });
+			},
+			loadContacts: () => {
+				fetch("https://playground.4geeks.com/apis/fake/contact/")
+					.then(response => response.json())
+					.then(data => setStore({ contacts: data }))
+					.catch(error => console.error("Error loading contacts:", error));
+			},
+			addContact: newContact => {
+				fetch("https://playground.4geeks.com/apis/fake/contact/", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify(newContact)
+				})
+					.then(response => response.json())
+					.then(() => getActions().loadContacts())
+					.catch(error => console.error("Error adding contact:", error));
+			},
+			updateContact: (id, updatedContact) => {
+				fetch(`https://playground.4geeks.com/apis/fake/contact/${id}`, {
+					method: "PUT",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify(updatedContact)
+				})
+					.then(response => response.json())
+					.then(() => getActions().loadContacts())
+					.catch(error => console.error("Error updating contact:", error));
+			},
+			deleteContact: id => {
+				fetch(`https://playground.4geeks.com/apis/fake/contact/${id}`, {
+					method: "DELETE"
+				})
+					.then(response => response.json())
+					.then(() => getActions().loadContacts())
+					.catch(error => console.error("Error deleting contact:", error));
 			}
 		}
 	};
