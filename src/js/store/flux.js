@@ -3,7 +3,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			demo: [
 				{
-					title: "FIRST",
+					title: "FIRSTWalter",
 					background: "white",
 					initial: "white"
 				},
@@ -12,7 +12,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			], count : 12,
+			meesage: 'hola navbar desde flux'
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
