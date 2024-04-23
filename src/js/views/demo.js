@@ -37,25 +37,32 @@ export const Demo = () => {
 					);
 				})}
                         {store.contacts.map((item, index) => {
-					return (
-						<li
-							key={index}
-							className="list-group-item d-flex justify-content-between"
-							>
-							{item.name}
-							<br/>
-							{item.email}
-							<br/>
-							{item.phone}
-							<br/>
-							{item.address}
-							<br/>
-							{item.id}
-							<button onClick = {()=>actions.deleteContact(item.id)}>Eliminar</button>
-						
-						</li>
-					);
-				})}
+    return (
+        <li key={index} className="list-group-item d-flex justify-content-start">
+            <img src="https://img.freepik.com/vector-gratis/ilustracion-telefono_53876-5568.jpg?size=626&ext=jpg" 
+			alt="Contact" style={{ width: '70px', height: '70px', borderRadius: '50%'}} /> {/* Ajusta el tamaño y margen según tus necesidades */}
+            <div>
+                <div><strong>{item.name}</strong></div>
+
+                <div>
+				<i className="bi bi-envelope" style={{ marginRight: '5px' }}> </i>
+					{item.address}
+					{item.email}
+					</div>
+                <div>
+				<i className="bi-telephone-forward" style={{ marginRight: '5px' }}> </i>
+					{item.phone}
+					</div>
+                <div>
+				<i className="bi bi-geo-alt" style={{ marginRight: '5px' }}> </i>
+					{item.address}
+					</div>
+                
+            </div>
+            <button style={{marginLeft:"auto"}} onClick={() => actions.deleteContact(item.id)}>Eliminar</button>
+        </li>
+    );
+})}  
 
 			</ul>
 			<br />
