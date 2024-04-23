@@ -11,8 +11,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 					title: "SECOND",
 					background: "white",
 					initial: "white"
+				},
+				{
+					title: "THIRD",
+					background: "white",
+					initial: "white"
 				}
-			], 
+				
+			],
+			contacts: [],
 			count : 12,
 			message: 'hola navbar desde flux'
 		},
@@ -24,7 +31,37 @@ const getState = ({ getStore, getActions, setStore }) => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
+				console.log ('estopy usando useeffcts ')
+				
+				fetch('https://playground.4geeks.com/contact/agendas/Walter/contacts')
+				.then(response => response.json())
+				//.then(data => console.log(data.contacts))
+				.then(data => setStore( {contacts: data.contacts}))
 			},
+
+			deleteContact: (itemToDelete) => { 
+				const store = getStore();
+				console.log('deleteContact desde flux', itemToDelete);
+				console.log(store.contacts);
+			
+				const requestOptions = {
+					method: "DELETE",
+					redirect: "follow"
+				};
+			
+				fetch("https://playground.4geeks.com/contact/agendas/Walter/contacts/" + itemToDelete, requestOptions)
+					.then((response) => response.text())
+					.then((result) => {
+						console.log(result);
+						fetch('https://playground.4geeks.com/contact/agendas/Walter/contacts')
+							.then(response => response.json())
+							.then(data => {
+								console.log(data);
+								setStore({ contacts: data.contacts });
+							});
+					});
+			},
+			
 			changeColor: (index, color) => {
 				const store = getStore();
 				const demo = store.demo.map((elm, i) => {
@@ -32,40 +69,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return elm;
 				});
 				setStore({ demo: demo });
-			},
-			loadContacts: () => {
-				fetch("https://playground.4geeks.com/apis/fake/contact/")
-					.then(response => response.json())
-					.then(data => setStore({ contacts: data }))
-					.catch(error => console.error("Error loading contacts:", error));
-			},
-			addContact: newContact => {
-				fetch("https://playground.4geeks.com/apis/fake/contact/", {
-					method: "POST",
-					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify(newContact)
-				})
-					.then(response => response.json())
-					.then(() => getActions().loadContacts())
-					.catch(error => console.error("Error adding contact:", error));
-			},
-			updateContact: (id, updatedContact) => {
-				fetch(`https://playground.4geeks.com/apis/fake/contact/${id}`, {
-					method: "PUT",
-					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify(updatedContact)
-				})
-					.then(response => response.json())
-					.then(() => getActions().loadContacts())
-					.catch(error => console.error("Error updating contact:", error));
-			},
-			deleteContact: id => {
-				fetch(`https://playground.4geeks.com/apis/fake/contact/${id}`, {
-					method: "DELETE"
-				})
-					.then(response => response.json())
-					.then(() => getActions().loadContacts())
-					.catch(error => console.error("Error deleting contact:", error));
 			}
 		}
 	};

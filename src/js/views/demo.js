@@ -8,6 +8,9 @@ import "../../styles/demo.css";
 export const Demo = () => {
 	const { store, actions } = useContext(Context);
 
+
+
+
 	return (
 		<div className="container">
 			<ul className="list-group">
@@ -33,6 +36,27 @@ export const Demo = () => {
 						</li>
 					);
 				})}
+                        {store.contacts.map((item, index) => {
+					return (
+						<li
+							key={index}
+							className="list-group-item d-flex justify-content-between"
+							>
+							{item.name}
+							<br/>
+							{item.email}
+							<br/>
+							{item.phone}
+							<br/>
+							{item.address}
+							<br/>
+							{item.id}
+							<button onClick = {()=>actions.deleteContact(item.id)}>Eliminar</button>
+						
+						</li>
+					);
+				})}
+
 			</ul>
 			<br />
 			<Link to="/">
