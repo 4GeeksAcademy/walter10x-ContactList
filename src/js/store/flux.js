@@ -41,7 +41,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			deleteContact: (itemToDelete) => { 
 				const store = getStore();
-				console.log('deleteContact desde flux', itemToDelete);
 				console.log(store.contacts);
 			
 				const requestOptions = {
@@ -61,6 +60,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 							});
 					});
 			},
+
+		
 			
 			changeColor: (index, color) => {
 				const store = getStore();

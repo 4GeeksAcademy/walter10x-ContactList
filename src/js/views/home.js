@@ -1,7 +1,9 @@
 import React, {useContext} from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
 import {Context} from "../store/appContext"
 import "../../styles/home.css";
+import { Demo } from "./demo";
+import { Formulario } from "./Formulario";
+import { Link } from "react-router-dom";
 
 export const Home = () => { 
  console.log("hola walter jose  ")
@@ -10,12 +12,12 @@ export const Home = () => {
 
 return (
 <div className="text-center mt-5">
-		<h1>Hello Walter!</h1>
-		<p>
-			<img src={rigoImage} />
-		</p>
-		<a href="#" className="btn btn-success">
-			If you see this green button, bootstrap is working
-		</a>
+       
+<Link to="/formulario">
+        <button>Go to Form</button>
+      </Link>
+	  
+	<h1>Este Es EL home</h1>
+     <Demo/>
 	</div>
 )};
