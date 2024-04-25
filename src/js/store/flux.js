@@ -60,7 +60,29 @@ const getState = ({ getStore, getActions, setStore }) => {
 							});
 					});
 			},
-
+			// Agregar una nueva acción para guardar un contacto
+			saveContact: (newContact) => {
+				console.log("Guardando contacto esto es lo que esperaba:", newContact);
+				
+				// Configurar la solicitud POST con los datos del nuevo contacto
+				const requestOptions = {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify(newContact)
+				};
+			
+				// Realizar la solicitud POST a la API
+				fetch("https://playground.4geeks.com/contact/agendas/Walter/contacts", requestOptions)
+					.then(response => response.json())
+					.then(data => {
+						console.log("Respuesta de la API al guardar contacto:", data);
+						// Puedes realizar más acciones según la respuesta de la API
+					})
+					.catch(error => console.error("Error al guardar el contacto:", error));
+			},
+			
+			
+				
 		
 			
 			changeColor: (index, color) => {

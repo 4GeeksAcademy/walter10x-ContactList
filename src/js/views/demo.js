@@ -8,16 +8,12 @@ import { Formulario } from "./Formulario";
 
 export const Demo = () => {
 	const { store, actions } = useContext(Context);
-
-
-
-
 	return (
 		 
 		<div className="container">
 			<ul className="list-group">
 				
-                        {store.contacts.map((item, index) => {
+    {store.contacts.map((item, index) => {
     return (
 		
         <li key={index} className="list-group-item d-flex justify-content-start">
@@ -27,17 +23,17 @@ export const Demo = () => {
                 <div><strong>{item.name}</strong></div>
 
                 <div>
-				<i className="bi bi-envelope" style={{ marginRight: '5px' }}> </i>
+				<i className="bi bi-geo-alt" style={{ marginRight: '5px' }}> </i>
 					{item.address}
-					{item.email}
+					
 					</div>
                 <div>
 				<i className="bi-telephone-forward" style={{ marginRight: '5px' }}> </i>
 					{item.phone}
 					</div>
                 <div>
-				<i className="bi bi-geo-alt" style={{ marginRight: '5px' }}> </i>
-					{item.address}
+				<i className="bi bi-envelope" style={{ marginRight: '5px' }}> </i>
+				{item.email}
 					</div>
                 
             </div>

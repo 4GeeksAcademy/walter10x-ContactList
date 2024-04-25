@@ -6,7 +6,6 @@ import { Formulario } from "./Formulario";
 import { Link } from "react-router-dom";
 
 export const Home = () => { 
- console.log("hola walter jose  ")
  const {store} = useContext(Context)
  console.log (store.demo)
 
