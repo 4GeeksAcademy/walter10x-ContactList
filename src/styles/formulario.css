@@ -1,0 +1,52 @@
+/* Estilos generales para la lista */
+.list-group-item {
+    border-radius: 8px; /* Ajusta el radio de borde según sea necesario */
+    margin-bottom: 10px; /* Espacio entre elementos de la lista */
+    background-color: black;
+    color: white;
+    padding: 15px; /* Ajusta el relleno interno según sea necesario */
+    position: relative; /* Posición relativa para los iconos absolutos */
+}
+
+/* Estilos específicos para el primer elemento de la lista */
+.list-group-item:first-child {
+    border-top-left-radius: 8px; /* Radio de borde superior izquierdo */
+    border-top-right-radius: 8px; /* Radio de borde superior derecho */
+    margin-top: 20px; /* Espacio superior para el primer elemento */
+}
+
+/* Estilos para el icono bi-pencil */
+.bi-pencil::before {
+    content: "\f4cb"; /* Código del icono lápiz */
+    font-family: "Font Awesome 5 Free"; /* Ajusta según la fuente de tus iconos */
+    font-weight: 900; /* Ajusta según el peso de tus iconos */
+    position: absolute; /* Posicionamiento absoluto para alinear con el contenido */
+    top: 50%; /* Ajusta la posición verticalmente según sea necesario */
+    left: 10px; /* Ajusta la posición izquierda del icono */
+    transform: translateY(-50%); /* Centra verticalmente el icono */
+    z-index: 1; /* Ajusta el z-index según sea necesario */
+    pointer-events: auto; /* Permite que el icono reciba eventos de ratón */
+    cursor: pointer; /* Cambia el cursor a puntero para indicar interactividad */
+    margin-left: 1190px;
+}
+
+/* Estilos para el icono bi-trash */
+.bi-trash::before {
+    content: "\f5de"; /* Código del icono papelera */
+    font-family: "Font Awesome 5 Free"; /* Ajusta según la fuente de tus iconos */
+    font-weight: 900; /* Ajusta según el peso de tus iconos */
+    position: absolute; /* Posicionamiento absoluto para alinear con el contenido */
+    top: 50%; /* Ajusta la posición verticalmente según sea necesario */
+    right: 10px; /* Ajusta la posición derecha del icono */
+    transform: translateY(-50%); /* Centra verticalmente el icono */
+    z-index: 1; /* Ajusta el z-index según sea necesario */
+    pointer-events: auto; /* Permite que el icono reciba eventos de ratón */
+    cursor: pointer; /* Cambia el cursor a puntero para indicar interactividad */
+    margin-left: 1195px;
+}
+
+img, svg {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+

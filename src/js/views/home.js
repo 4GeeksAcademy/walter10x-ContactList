@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import {Context} from "../store/appContext"
 import "../../styles/home.css";
-import { Demo } from "./demo";
+import { Demo } from "./ContactForm";
 import { Formulario } from "./Formulario";
 import { Link } from "react-router-dom";
 
@@ -16,7 +16,7 @@ return (
         <button>Go to Form</button>
       </Link>
 	  
-	<h1>Este Es EL home</h1>
-     <Demo/>
+	<h1>Este Es EL homex</h1>
+     
 	</div>
 )};

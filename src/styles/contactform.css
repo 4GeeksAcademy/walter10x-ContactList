@@ -1,0 +1,110 @@
+/* Estilos para el cuerpo de la página */
+body {
+    background-color: #000000; /* Fondo negro para toda la página */
+    color: white; /* Color del texto por defecto */
+}
+
+/* Estilos generales para la lista */
+.list-group-item {
+    border-radius: 8px; /* Radio de borde */
+    margin-bottom: 20px; /* Espacio entre elementos de la lista */
+    background-color: #343a40; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 20px; /* Relleno interno */
+    position: relative; /* Posición relativa para los íconos absolutos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombreado profesional */
+}
+
+/* Estilos específicos para el primer elemento de la lista */
+.list-group-item:first-child {
+    margin-top: 20px; /* Espacio superior para el primer elemento */
+}
+
+/* Estilos para el icono bi-pencil */
+.bi-pencil::before {
+    content: "\f4cb"; /* Código del icono lápiz */
+    font-family: "Font Awesome 5 Free"; /* Fuente de los íconos */
+    font-weight: 900; /* Peso del ícono */
+    font-size: 20px; /* Tamaño del ícono */
+    position: absolute; /* Posicionamiento absoluto */
+    top: 50%; /* Centrado vertical */
+    left: 15px; /* Alineación a la izquierda */
+    transform: translateY(-50%); /* Centra verticalmente */
+    z-index: 1; /* Z-index para estar sobre el contenido */
+    cursor: pointer; /* Cursor de puntero */
+    margin-left: 1190px;
+}
+
+/* Estilos para el icono bi-trash */
+.bi-trash::before {
+    content: "\f5de"; /* Código del icono papelera */
+    font-family: "Font Awesome 5 Free"; /* Fuente de los íconos */
+    font-weight: 900; /* Peso del ícono */
+    font-size: 20px; /* Tamaño del ícono */
+    position: absolute; /* Posicionamiento absoluto */
+    top: 50%; /* Centrado vertical */
+    right: 15px; /* Alineación a la derecha */
+    transform: translateY(-50%); /* Centra verticalmente */
+    z-index: 1; /* Z-index para estar sobre el contenido */
+    cursor: pointer; /* Cursor de puntero */
+}
+
+img, svg {
+    vertical-align: middle; /* Alineación vertical */
+    margin-right: 10px; /* Margen derecho */
+}
+
+/* Estilos para los nombres */
+.list-group-item strong {
+    color: white; /* Color blanco para los nombres */
+}
+
+/* Estilos para los detalles (dirección, teléfono, email) */
+.list-group-item div {
+    color: grey; /* Color gris para los detalles */
+}
+
+/* Estilos para los botones */
+.btn {
+    background-color: yellow; /* Color de fondo amarillo */
+    color: black; /* Color del texto negro */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Relleno */
+    border-radius: 5px; /* Borde redondeado */
+    cursor: pointer; /* Cursor de puntero */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombreado profesional */
+}
+
+.btn-primary {
+    background-color: yellow; /* Color de fondo amarillo */
+    color: black; /* Color del texto negro */
+}
+
+.btn-primary:hover {
+    background-color: #ffdd00; /* Color de fondo al pasar el ratón */
+}
+
+
+.footer {
+    background-color: #343a40; /* Fondo oscuro para el footer */
+    color: white; /* Texto blanco */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Estilos para los íconos de redes sociales */
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white; /* Color de íconos blanco */
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.social-icons a:hover {
+    color: #ffc107; /* Color amarillo al pasar el mouse */
+    text-decoration: none;
+}
