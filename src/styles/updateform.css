@@ -1,22 +1,26 @@
 /* Estilos para el formulario de actualización */
 .update-form-container {
-    background-color: black;
+    background-color: #343a40; /* Fondo oscuro */
     color: white;
     padding: 20px;
     border-radius: 10px;
+    margin: 20px auto; /* Centra el formulario y agrega espacio */
     max-width: 500px;
-    margin: 0 auto;
 }
 
-.update-form-container input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-    background-color: grey;
-    color: rgb(8, 8, 8);
+/* Estilos para el footer */
+/* Estilos generales para el footer */
+.footer {
+    background-color: #343a40; /* Fondo oscuro */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: fixed; /* Hace que el footer quede fijo */
+    bottom: 0; /* Lo posiciona al final de la página */
+    width: 100%; /* Ocupa todo el ancho disponible */
 }
+
+
 
 .update-form-container .buttons {
     display: flex;
@@ -39,4 +43,72 @@
 .update-form-container .buttons .cancel-button {
     background-color: grey;
     color: black;
+    margin-left: auto; /* Coloca el botón de cancelar a la derecha */
+}
+
+.update-form-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #6c757d; /* Borde gris para todos los inputs */
+    border-radius: 5px;
+    background-color: #343a40; /* Fondo oscuro */
+    color: white; /* Color del texto */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: border-color 0.3s ease; /* Transición suave para el borde */
+}
+
+.update-form-container input:focus {
+    border-color: yellow; /* Cambia el color del borde al enfocar */
+    outline: none; /* Quita el outline predeterminado */
+}
+
+/* Placeholder */
+.update-form-container input::placeholder {
+    color: #6c757d; /* Color del placeholder */
+}
+
+/* Estilo para los botones */
+.update-form-container .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.update-form-container .buttons button {
+    padding: 10px 20px;
+    border: 2px solid transparent; /* Borde transparente por defecto */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Transición suave para cambios */
+}
+
+.update-form-container .buttons .update-button {
+    background-color: yellow;
+    color: black;
+}
+
+.update-form-container .buttons .update-button:hover {
+    background-color: transparent;
+    color: yellow;
+    border-color: yellow; /* Borde amarillo al hacer hover */
+}
+
+.update-form-container .buttons .update-button:active {
+    transform: translateY(1px); /* Efecto de clic */
+}
+
+.update-form-container .buttons .cancel-button {
+    background-color: grey;
+    color: black;
+}
+
+.update-form-container .buttons .cancel-button:hover {
+    background-color: transparent;
+    color: grey;
+    border-color: black; /* Borde negro al hacer hover */
+}
+
+.update-form-container .buttons .cancel-button:active {
+    transform: translateY(1px); /* Efecto de clic */
 }

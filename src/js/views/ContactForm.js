@@ -15,14 +15,13 @@ export const ContactForm = () => {
         navigate(`/update/${contactId}`);
     };
 
-   
     return (
         <div className="container">
             <h1 className="title">Lista de contactos de {store.agendaSlug}</h1>
             <Link to="/formulario">
-                <button className="btn">Crear Contacto</button>
+                <button className="btn btn-primary">Crear Contacto</button>
             </Link>
-           
+
             <ul className="list-group">
                 {store.contacts.map((item, index) => (
                     <li key={index} className="list-group-item d-flex justify-content-start">
@@ -31,7 +30,7 @@ export const ContactForm = () => {
                             alt="Contact"
                             style={{ width: '100px', height: '100px', borderRadius: '100%', backgroundColor: "black" }}
                         />
-                        <div>
+                        <div className="ml-3">
                             <div><strong>{item.name}</strong></div>
                             <div>
                                 <i className="bi bi-geo-alt" style={{ marginRight: '5px' }}></i>
@@ -47,20 +46,19 @@ export const ContactForm = () => {
                             </div>
                         </div>
                         <i
-                            className="bi bi-pencil"
-                            style={{ marginLeft: '840px', cursor: 'pointer' }}
+                            className="bi bi-pencil ml-auto"
+                            style={{ cursor: 'pointer' }}
                             onClick={() => handleEdit(item.id)}
                         ></i>
                         <i
-                            className="bi bi-trash"
-                            style={{ marginLeft: 'auto', marginRight: '50px', cursor: 'pointer' }}
+                            className="bi bi-trash ml-2"
+                            style={{ cursor: 'pointer' }}
                             onClick={() => actions.deleteContact(item.id)}
                         ></i>
                     </li>
                 ))}
             </ul>
             <br />
-            
         </div>
     );
 };

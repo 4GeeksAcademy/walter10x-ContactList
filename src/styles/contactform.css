@@ -108,3 +108,30 @@ img, svg {
     color: #ffc107; /* Color amarillo al pasar el mouse */
     text-decoration: none;
 }
+
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #343a40; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 20px; /* Espaciado interno */
+    text-align: center; /* Centrado horizontal */
+  }
+  
+  .social-icons {
+    margin-top: 10px;
+  }
+  
+  .social-icon {
+    display: inline-block;
+    margin-right: 10px;
+    color: white;
+    font-size: 20px;
+  }
+  
+  .social-icon:hover {
+    color: yellow;
+  }
+  
