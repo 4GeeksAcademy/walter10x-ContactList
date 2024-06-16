@@ -1,0 +1,25 @@
+/* Estilos para los íconos de redes sociales */
+.social-icons {
+    margin-top: 10px; /* Margen superior para separar del texto */
+}
+
+.social-icons a {
+    color: white; /* Color de los iconos */
+    font-size: 24px; /* Tamaño de fuente de los iconos */
+    margin: 0 10px; /* Espacio entre los íconos */
+}
+
+/* Estilo específico para el icono de WhatsApp */
+.social-icons a.whatsapp-icon {
+    font-size: 28px; /* Ajuste de tamaño específico */
+}
+
+/* Estilo para el enlace de texto en el footer */
+.footer a {
+    color: white; /* Color del texto del enlace */
+    text-decoration: none; /* Quitar subrayado del enlace */
+}
+
+.footer a:hover {
+    text-decoration: underline; /* Subrayado al hacer hover */
+}

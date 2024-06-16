@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import "../../styles/formulario.css";
+import { Footer } from "../component/footer";
 
 export const Formulario = (props) => {
   const { actions } = useContext(Context);
@@ -132,6 +133,7 @@ export const Formulario = (props) => {
               </div>
             </div>
           </div>
+          <Footer />
         </div>
       )}
     </div>
