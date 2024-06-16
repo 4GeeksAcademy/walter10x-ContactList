@@ -15,9 +15,13 @@ export const ContactForm = () => {
         navigate(`/update/${contactId}`);
     };
 
+    const confirmDelete = (contactId) => {
+        // Aquí puedes implementar la lógica para mostrar un modal de confirmación
+    };
+
     return (
         <div className="container">
-            <h1 className="title">Lista de contactos de {store.agendaSlug}</h1>
+            <h1 className="title text-center mt-4 mb-4">Lista de contactos de {store.agendaSlug}</h1>
             <Link to="/formulario">
                 <button className="btn btn-primary">Crear Contacto</button>
             </Link>
@@ -53,12 +57,15 @@ export const ContactForm = () => {
                         <i
                             className="bi bi-trash ml-2"
                             style={{ cursor: 'pointer' }}
-                            onClick={() => actions.deleteContact(item.id)}
+                            onClick={() => confirmDelete(item.id)}
                         ></i>
                     </li>
                 ))}
             </ul>
+
             <br />
         </div>
     );
 };
+
+export default ContactForm;

@@ -51,7 +51,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					redirect: "follow"
 				};
 
-				fetch("https://playground.4geeks.com/contact/agendas/Walter/contacts/" + itemToDelete, requestOptions)
+				fetch("https://playground.4geeks.com/contact/agendas/walter/contacts/" + itemToDelete, requestOptions)
 					.then((response) => response.text())
 					.then((result) => {
 						console.log(result);
